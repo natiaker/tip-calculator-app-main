@@ -14,13 +14,14 @@
 
 ### Links
 
-- Solution URL: [Solution URL](https://github.com/natiaker/fylo-landing-page-with-two-column-layout-master.git)
-- Live Site URL: [Live site URL](https://natiaker.github.io/fylo-landing-page-with-two-column-layout-master)
+- Solution URL: [Solution URL](https://github.com/natiaker/tip-calculator-app-main.git)
+- Live Site URL: [Live site URL](https://natiaker.github.io/tip-calculator-app-main)
 
 ### Built with
 
 - Semantic HTML5 markup
 - SASS
+- BEMCSS architecture
 - Flexbox
 - Mobile-first workflow
 

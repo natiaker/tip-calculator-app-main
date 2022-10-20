@@ -11,18 +11,17 @@ body {
     background-color: $background-color;
     @include displayFlex(column, flex-start, center);
     min-height: 100vh;
-    @media screen and (min-width: 1024px) {
-        @include displayFlex(column, center, center);
+    @media screen and (min-width: $desktop) {
+       justify-content: center;
     }
 }
 
 .logo {
     margin-top: 5rem;
     margin-bottom: 4.1rem;
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: $desktop) {
         & {
-            margin-top: 0;
-            margin-bottom: 8.7rem;
+            margin-bottom: 8.8rem;
         }
     }
 }
@@ -43,6 +42,14 @@ body {
     &::placeholder {
         color: $grayish-cyan;
     }
+    @media screen and (min-width: $desktop) {
+        & {
+            min-width: 37.5rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 %label-style {
@@ -56,11 +63,19 @@ body {
     background-color: $white;
     width: 100%;
     max-width: 37.5rem;
-    box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
-    border-radius: 25px 25px 0px 0px;
+    box-shadow: 0px 3.2rem 4.3rem rgba(79, 166, 175, 0.200735);
+    border-radius: 2.5rem 2.5rem 0 0;
+    @media screen and (min-width: $desktop) {
+        @include displayFlex(row, center, stretch);
+        max-width: 92rem;
+        border-radius: 2.5rem;
+    }
     .input-section {
         max-width: 37.9rem;
-        padding: 3.2rem;
+        margin: 3.2rem;
+        @media screen and (min-width: $desktop) {
+            margin: 4.5rem;
+        }
         &__bill {
             background-image: url(../images/icon-dollar.svg);
             @extend %input-style;
@@ -108,6 +123,25 @@ body {
                     color: $grayish-cyan;
                 }
             }
+            @media screen and (min-width: $desktop) {
+                & {
+                    &--btn {
+                        width: 30%;
+                        transition: all .3s ease;
+                        &:hover {
+                            cursor: pointer;
+                            color: $very-dark-cyan;
+                            background-color: $button-hover;
+                        }
+                    }
+                    &--input {
+                        width: 30%;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
         }
     }
     .result-section {
@@ -117,6 +151,11 @@ body {
         padding: 3.7rem 2.4rem 2.4rem;
         background-color: $very-dark-cyan;
         border-radius: 1.5rem;
+        @media screen and (min-width: $desktop) {
+            width: 41.3rem;
+            padding: 4rem;
+            margin-right: 3.2rem;
+        }
         &__tip-amount,
         &__total {
             @include displayFlex(row, space-between, center);
@@ -140,6 +179,14 @@ body {
             border: none;
             border-radius: .5rem;
             font-size: $reset-size;
+            @media screen and (min-width: $desktop) {
+                margin-top: 13.4rem;
+                transition: .3s ease;
+                &:hover {
+                    cursor: pointer;
+                    background-color: $button-hover;
+                }
+            }
         }
     }
 }
