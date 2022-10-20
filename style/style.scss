@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+@import "_variables";
+@import "_mixins";
+
+html {
+    font-size: 62.5%;
+    font-family: 'Space Mono', monospace;
+}
+
+body {
+    background-color: $background-color;
+    @include displayFlex(column, flex-start, center);
+    min-height: 100vh;
+    @media screen and (min-width: 1024px) {
+        @include displayFlex(column, center, center);
+    }
+}
+
+.logo {
+    margin-top: 5rem;
+    margin-bottom: 4.1rem;
+    @media screen and (min-width: 1024px) {
+        & {
+            margin-top: 0;
+            margin-bottom: 8.7rem;
+        }
+    }
+}
+
+%input-style {
+    max-width: 31.1rem;
+    color: $very-dark-cyan;
+    background-color: $light-grayish-cyan;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+    background-position-x: 5%;
+    padding: .6rem 1.7rem;
+    margin-top: .6rem;
+    font-size: $input-size;
+    text-align: right;
+    border: none;
+    border-radius: .5rem;
+    &::placeholder {
+        color: $grayish-cyan;
+    }
+}
+
+%label-style {
+    font-size: $label-size;
+    color: $dark-grayish-cyan;
+    margin-bottom: .6rem;
+}
+
+.container {
+    @include displayFlex(column, flex-start, center);
+    background-color: $white;
+    width: 100%;
+    max-width: 37.5rem;
+    box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
+    border-radius: 25px 25px 0px 0px;
+    .input-section {
+        max-width: 37.9rem;
+        padding: 3.2rem;
+        &__bill {
+            background-image: url(../images/icon-dollar.svg);
+            @extend %input-style;
+            &--label {
+                @extend %label-style;
+            }
+        }
+        &__people {
+            background-image: url(../images/icon-person.svg);
+            @extend %input-style;
+            &--label {
+                @extend %label-style;
+            }
+        }
+        &__p {
+            @extend %label-style;
+            margin-top: 3.2rem;
+            margin-bottom: 1.6rem;
+        }
+        &__tip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+            margin-bottom: 3.2rem;
+            &--btn {
+                width: 47%;
+                padding: .6rem 1.3rem;
+                color: $white;
+                font-size: $input-size;
+                background-color: $very-dark-cyan;
+                border: none;
+                border-radius: .5rem;
+            }
+            &--input {
+                width: 47%;
+                padding: 0.6rem 1.3rem;
+                border: none;
+                border-radius: .5rem;
+                background-color: $light-grayish-cyan;
+                color: $very-dark-cyan;
+                font-size: $input-size;
+                text-align: right;
+                &::placeholder {
+                    font-size: $input-size;
+                    color: $grayish-cyan;
+                }
+            }
+        }
+    }
+    .result-section {
+        margin-top: 3.2rem;
+        margin-bottom: 3.2rem;
+        width: 32.7rem;
+        padding: 3.7rem 2.4rem 2.4rem;
+        background-color: $very-dark-cyan;
+        border-radius: 1.5rem;
+        &__tip-amount,
+        &__total {
+            @include displayFlex(row, space-between, center);
+            color: $white;
+            font-size: $label-size;
+            margin-bottom: 2rem;
+            &--span {
+                color: #7F9D9F;
+                font-size: $span-size;
+            }
+            &--price {
+                color: $strong-cyan;
+                font-size: 3.2rem;
+            }
+        }
+        &__reset {
+            width: 100%;
+            padding: .9rem 3.2rem;
+            color: $very-dark-cyan;
+            background-color: $strong-cyan;
+            border: none;
+            border-radius: .5rem;
+            font-size: $reset-size;
+        }
+    }
+}

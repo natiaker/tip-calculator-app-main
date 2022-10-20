@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Tip calculator app</title>
+  <link rel="stylesheet" href="./style/reset.css">
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <header>
+    <img src="./images/logo.svg" alt="logo" class="logo">
+  </header>
+  <div class="container">
+    <div class="input-section">
+      <label for="bill" class="input-section__bill--label">Bill</label> <br>
+      <input type="number" name="bill" placeholder="0" class="input-section__bill">
+      <p class="input-section__p">Select Tip %</p>
+      <div class="input-section__tip">
+        <button class="input-section__tip--btn">5%</button>
+        <button class="input-section__tip--btn">10%</button>
+        <button class="input-section__tip--btn">15%</button>
+        <button class="input-section__tip--btn">25%</button>
+        <button class="input-section__tip--btn">50%</button>
+        <input type="text" placeholder="Custom" class="input-section__tip--input">
+      </div>
+      <label for="people" class="input-section__people--label">Number of People</label> <br>
+      <input type="number" name="people" placeholder="0" class="input-section__people">
+    </div>
+    <div class="result-section">
+      <div class="result-section__tip-amount">
+        <p>Tip Amount <br> <span class="result-section__tip-amount--span">/person</span></p>
+        <p id="tip-amount-price" class="result-section__tip-amount--price">$0.00</p>
+      </div>
+      <div class="result-section__total">
+        <p>Total <br> <span class="result-section__tip-amount--span">/person</span></p>
+        <p id="total-price" class="result-section__tip-amount--price">$0.00</p>
+      </div>
+      <button class="result-section__reset">RESET</button>
+    </div>
+  </div>
+</body>
+</html>
