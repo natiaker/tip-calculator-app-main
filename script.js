@@ -11,14 +11,24 @@ let total = 0;
 let totalPerPerson = 0;
 let tipPerPerson = 0;
 
+
+function calculate() {
+    tipAmount = (bill.value*tipRate/100).toFixed(2);
+    tipAmountResult.innerText = `$${tipAmount}`;
+    
+    total = parseFloat(bill.value) + parseFloat(tipAmount);
+    totalResult.innerText = `$${total}`;
+}
+
+tipInput.addEventListener("input", () => {
+    tipRate = tipInput.value;
+    calculate();
+})
+
 tipBtn.forEach(el => {
     el.onclick = (event) => {
         tipRate = parseInt(event.target.textContent);
-        tipAmount = (bill.value*tipRate/100).toFixed(2);
-        tipAmountResult.innerText = `$${tipAmount}`;
-
-        total = parseFloat(bill.value) + parseFloat(tipAmount);
-        totalResult.innerText = `$${total}`;
+        calculate();
     }
 })
 
