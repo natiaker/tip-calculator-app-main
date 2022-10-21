@@ -21,7 +21,7 @@ function calculate() {
 }
 
 tipInput.addEventListener("input", () => {
-    tipRate = tipInput.value;
+    tipRate = parseInt(tipInput.value);
     calculate();
 })
 
@@ -33,12 +33,18 @@ tipBtn.forEach(el => {
 })
 
 people.addEventListener("input", () => {
-    let peopleNum = parseInt(people.value);
-
-    tipPerPerson = tipAmount/peopleNum;
+    tipPerPerson = (tipAmount/people.value).toFixed(2);
     tipAmountResult.innerText = `$${tipPerPerson}`;
 
     total = parseFloat(bill.value) + parseFloat(tipAmount);
-    totalPerPerson = (total/peopleNum).toFixed(2);
+    totalPerPerson = (total/people.value).toFixed(2);
     totalResult.innerText = `$${totalPerPerson}`;
 })
+
+reset.addEventListener("click", () => {
+    bill.value = "";
+    people.value = "";
+    tipInput.value = "";
+    totalResult.innerText = "$0.00";
+    tipAmountResult.innerText = "$0.00";
+}) 
