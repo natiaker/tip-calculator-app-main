@@ -35,11 +35,11 @@ body {
   background-repeat: no-repeat;
   background-position-y: 50%;
   background-position-x: 5%;
-  padding: 0.6rem 1.7rem;
+  padding: 0.5rem 1.7rem;
   margin-top: 0.6rem;
   font-size: 2.4rem;
   text-align: right;
-  border: none;
+  border: 2px solid hsl(185deg, 38%, 97%);
   border-radius: 0.5rem;
 }
 .container .input-section__people::-moz-placeholder, .container .input-section__bill::-moz-placeholder {
@@ -124,7 +124,6 @@ body {
 .container .input-section__tip--input {
   width: 47%;
   padding: 0.6rem 1.3rem;
-  border: none;
   border-radius: 0.5rem;
   background-color: hsl(185deg, 38%, 97%);
   color: hsl(183deg, 100%, 15%);
@@ -196,7 +195,7 @@ body {
   width: 100%;
   padding: 0.9rem 3.2rem;
   color: hsl(183deg, 100%, 15%);
-  background-color: hsl(172deg, 67%, 45%);
+  background-color: #0D686D;
   border: none;
   border-radius: 0.5rem;
   font-size: 2rem;

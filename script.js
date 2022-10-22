@@ -13,22 +13,53 @@ let tipPerPerson = 0;
 
 
 function calculate() {
-    tipAmount = (bill.value*tipRate/100).toFixed(2);
+    tipAmount = (billAmount*tipRate/100).toFixed(2);
     tipAmountResult.innerText = `$${tipAmount}`;
     
     total = parseFloat(bill.value) + parseFloat(tipAmount);
-    totalResult.innerText = `$${total}`;
+    totalResult.innerText = `$${total.toFixed(2)}`;
+
+    reset.style.backgroundColor = "hsl(172, 67%, 45%)";
 }
 
-tipInput.addEventListener("input", () => {
-    tipRate = parseInt(tipInput.value);
+bill.addEventListener("input", () => { 
+    billAmount = parseInt(bill.value);
+
+    if(bill.value <= 0) {
+        totalResult.innerText = "$0.00";
+        tipAmountResult.innerText = "$0.00";
+        document.getElementById("billError").style.display = "inline";
+        bill.style.border = "2px solid #E17052";
+    } else {
+        document.getElementById("billError").style.display = "none";
+        bill.style.border = "2px solid #26C2AE";
+    }
     calculate();
+})
+
+tipInput.addEventListener("input", () => {
+    if(bill.value > 0) {
+        tipRate = parseInt(tipInput.value);
+        if(tipRate <= 0) {
+            totalResult.innerText = "$0.00";
+            tipAmountResult.innerText = "$0.00";
+            tipInput.style.border = "2px solid #E17052";
+        } else {
+            tipInput.style.border = "2px solid #26C2AE";
+        }
+        calculate();
+    } 
 })
 
 tipBtn.forEach(el => {
     el.onclick = (event) => {
-        tipRate = parseInt(event.target.textContent);
-        calculate();
+        if(bill.value > 0) {
+            tipRate = parseInt(event.target.textContent);
+            calculate();
+        } else {
+            totalResult.innerText = "$0.00";
+            tipAmountResult.innerText = "$0.00";
+        }
     }
 })
 
@@ -39,12 +70,29 @@ people.addEventListener("input", () => {
     total = parseFloat(bill.value) + parseFloat(tipAmount);
     totalPerPerson = (total/people.value).toFixed(2);
     totalResult.innerText = `$${totalPerPerson}`;
+
+    if(people.value <= 0) {
+        totalResult.innerText = "$0.00";
+        tipAmountResult.innerText = "$0.00";
+        document.getElementById("peopleError").style.display = "inline";
+        people.style.border = "2px solid #E17052";
+    } else {
+        document.getElementById("peopleError").style.display = "none";
+        people.style.border = "2px solid #26C2AE";
+    }
+
 })
 
 reset.addEventListener("click", () => {
     bill.value = "";
     people.value = "";
     tipInput.value = "";
+    bill.style.border = "2px solid hsla(185, 38%, 97%, 1)";
+    people.style.border = "2px solid hsla(185, 38%, 97%, 1)";
+    tipInput.style.border = "2px solid hsla(185, 38%, 97%, 1)";
     totalResult.innerText = "$0.00";
     tipAmountResult.innerText = "$0.00";
+    reset.style.backgroundColor = "#0D686D";
+    document.getElementById("peopleError").style.display = "none";
+    document.getElementById("billError").style.display = "none";
 }) 

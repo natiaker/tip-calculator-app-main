@@ -24,6 +24,7 @@
 - BEMCSS architecture
 - Flexbox
 - Mobile-first workflow
+- JavaScript
 
 ## Author
 

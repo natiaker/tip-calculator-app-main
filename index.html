@@ -15,7 +15,7 @@
   </header>
   <div class="container">
     <div class="input-section">
-      <label for="bill" class="input-section__bill--label">Bill</label> <br>
+      <label for="bill" class="input-section__bill--label">Bill<span id="billError" style="display:none; color:#E17052; float: right;">Can't be zero</span></label> <br>
       <input type="number" name="bill" placeholder="0" class="input-section__bill">
       <p class="input-section__p">Select Tip %</p>
       <div class="input-section__tip">
@@ -26,7 +26,8 @@
         <button class="input-section__tip--btn">50%</button>
         <input type="number" placeholder="Custom" class="input-section__tip--input">
       </div>
-      <label for="people" class="input-section__people--label">Number of People</label> <br>
+      <label for="people" class="input-section__people--label">Number of People<span id="peopleError" style="display:none; color:#E17052; float: right;">Can't be zero</span></label>
+      <br>
       <input type="number" name="people" placeholder="0" class="input-section__people">
     </div>
     <div class="result-section">
