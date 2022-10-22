@@ -205,8 +205,4 @@ body {
     margin-top: 13.4rem;
     transition: 0.3s ease;
   }
-  .container .result-section__reset:hover {
-    cursor: pointer;
-    background-color: hsl(173deg, 61%, 77%);
-  }
 }/*# sourceMappingURL=style.css.map */

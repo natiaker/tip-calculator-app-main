@@ -181,10 +181,10 @@ body {
             @media screen and (min-width: $desktop) {
                 margin-top: 13.4rem;
                 transition: .3s ease;
-                &:hover {
-                    cursor: pointer;
-                    background-color: $button-hover;
-                }
+                // &:hover {
+                //     // cursor: pointer;
+                //     // background-color: $button-hover;
+                // }
             }
         }
     }
